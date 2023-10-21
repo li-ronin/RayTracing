@@ -1,22 +1,23 @@
 #pragma once
 #include "vec3.h"
 
-class Ray {
+class Ray
+{
 private:
     // 光线起始点
-    Vec3 _origin;
+    Point3 _origin;
     // 方向：单位长度的方向
-    Vec3 _direction;
-    // 光线长度 t 
-    // 光线Ray的向量= 起始点 + 长度*方向
+    Vector _direction;
+
 public:
-    Ray(){}
-    Ray(const Vec3& orig, const Vec3& dir)
-    :_origin(orig), _direction(dir){}
-    inline Vec3 origin() const {return _origin;}
-    inline Vec3 direction() const {return _direction;}
-    inline Vec3 A_t(double t) const{
-        //_direction = _direction.unit_vector();
-        return _origin + (_direction * t); 
+    Ray() {}
+    Ray(const Point3 &orig, const Vector &dir)
+        : _origin(orig), _direction(dir) {}
+    inline Point3 origin() const { return _origin; }
+    inline Vector direction() const { return _direction; }
+    // A_t表示光线从_origin出发，沿着_direction的方向走了步长t之后的终点
+    inline Point3 A_t(double t) const
+    {
+        return _origin + (_direction * t);
     }
 };
