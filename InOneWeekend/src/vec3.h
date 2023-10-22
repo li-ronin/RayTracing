@@ -9,7 +9,7 @@ private:
     double e[3];
 
 public:
-    Vec3() : e{0, 0, 0} {}
+    Vec3() : e{0., 0., 0.} {}
     Vec3(double d) : e{d, d, d} {}
     Vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}
 
@@ -79,10 +79,11 @@ inline Vec3 operator*(double d, const Vec3 &v)
 {
     return v * d;
 }
-inline Vec3 operator/(Vec3 &v, double d)
+inline Vec3 operator/(const Vec3 &v,  double d)
 {
     return v * (1 / d);
 }
+
 
 // 向量点乘
 double dot(const Vec3 &u, const Vec3 &v)

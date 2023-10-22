@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++20 -O3
 TARGET = ./bin/inoneweekend.exe
 
-SRCS = ./src/inoneweekend.cpp ./src/ray.cpp ./src/vec3.cpp
+SRCS = ./src/inoneweekend.cpp
 OBJS = $(patsubst ./src/%.cpp, ./obj/%.o, $(SRCS))
 
 $(TARGET): $(OBJS)
@@ -12,9 +12,7 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # 定义依赖关系
-./obj/inoneweekend.o: ./src/inoneweekend.cpp ./src/ray.h
-./obj/ray.o: ./src/ray.cpp ./src/ray.h ./src/vec3.h
-./obj/vec3.o: ./src/vec3.cpp ./src/vec3.h
+./obj/inoneweekend.o: ./src/inoneweekend.cpp ./src/color.h ./src/ray.h ./src/vec3.h ./src/camera.h ./src/sphere.h ./src/hittable_list.h ./src/hittable.h 
 
 clean:
 	rm -f $(TARGET) $(OBJS)
