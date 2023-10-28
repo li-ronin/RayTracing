@@ -18,9 +18,9 @@ public:
         object_list.push_back(object);
     }
     // 对于一条光线r，它的路径上可能存在多个物体，我们取离原点最近的碰撞点信息rec存下来
-    bool hit(const Ray &r, double ray_tmin, double ray_tmax, hit_record &rec) const override
+    bool hit(const Ray &r, double ray_tmin, double ray_tmax, hit_info &rec) const override
     {
-        hit_record temp_rec;
+        hit_info temp_rec;
         bool hit_anything = false;
         auto closest_so_far = ray_tmax;
         for(const auto& obj : object_list)

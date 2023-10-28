@@ -11,8 +11,9 @@ $(TARGET): $(OBJS)
 ./obj/%.o: ./src/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# 定义依赖关系
-./obj/inoneweekend.o: ./src/inoneweekend.cpp ./src/color.h ./src/ray.h ./src/vec3.h ./src/camera.h ./src/sphere.h ./src/hittable_list.h ./src/hittable.h 
+# 定义依赖关系 
+./obj/inoneweekend.o: ./src/inoneweekend.cpp  ./src/vec3.h ./src/camera.h ./src/sphere.h ./src/hittable_list.h ./src/material.h ./src/lambertian.h ./src/metal.h ./src/glass.h
+
 
 clean:
 	rm -f $(TARGET) $(OBJS)

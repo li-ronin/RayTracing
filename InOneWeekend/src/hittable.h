@@ -1,15 +1,23 @@
 //***********hittable.h**********//
 #pragma once
 #include "ray.h"
+#include "material.h"
 
-class hit_record
+/**
+ * @brief 光线与物体的碰撞信息
+ */
+class hit_info
 {
 public:
-  Point3 point;  // 碰撞点point
+  Point3 _hit_point;  // 碰撞点point
   Vector normal; // 碰撞点处法线
   double t;      // 光线长度t
-  bool ray_is_outward;
+  bool   ray_is_outward;
+  std::shared_ptr<Material> mat;
 
+  /**
+   * 设置碰撞点信息，包括碰撞点处法线向量、法线朝向
+   */
   void set_face_normal(const Ray &r, const Vector &outward_normal)
   {
     if (dot(r.direction(), outward_normal) < 0) // 光线方向和曲面外法线的方向相反的话说明光朝着曲面内部射 --->(
@@ -20,6 +28,7 @@ public:
     {
       ray_is_outward = false; //  --->)
     }
+    // 单位法向量，没有位置信息
     normal = ray_is_outward ? outward_normal : -outward_normal;
   }
 };
@@ -29,5 +38,5 @@ class hittable
 {
 public:
   virtual ~hittable() = default;
-  virtual bool hit(const Ray &r, double ray_tmin, double ray_tmax, hit_record &rec) const = 0;
+  virtual bool hit(const Ray &r, double ray_tmin, double ray_tmax, hit_info &rec) const = 0;
 };

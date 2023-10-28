@@ -2,24 +2,19 @@
 #pragma once
 #include "vec3.h"
 #include "hittable.h"
+#include <memory>
 
 class Sphere : public hittable
 {
 private:
     Point3 _sphere_center;
     double _radius;
+    std::shared_ptr<Material> _mat;
 
 public:
+    Sphere(Point3 center, double radius, std::shared_ptr<Material> mat) : _sphere_center(center), _radius(radius), _mat(mat) {}
 
-    Sphere(Point3 center, double radius) : _sphere_center(center), _radius(radius) {}
-    /*
-    @brief: 撞击函数，求取撞击点相关记录信息
-    @param: r:   光线
-            ray_tmin, ray_tmax: 系数t的上下界
-            rec: 撞击点信息
-    @retur: 是否存在合法撞击点
-    */
-    bool hit(const Ray &r, double ray_tmin, double ray_tmax, hit_record &rec) const override
+    bool hit(const Ray &r, double ray_tmin, double ray_tmax, hit_info &rec) const override
     {
         // 代数求解 ax^2+bx+c = 0。其中光线r的步长t是未知数X
         Vector trace = r.origin() - _sphere_center;
@@ -39,8 +34,9 @@ public:
             }
         }
         rec.t = t;
-        rec.point = r.A_t(t);
-        Vector outward_normal = (rec.point - _sphere_center) / _radius;
+        rec._hit_point = r.A_t(t);
+        rec.mat = _mat;
+        Vector outward_normal = (rec._hit_point - _sphere_center) / _radius;
         rec.set_face_normal(r, outward_normal);
         return true;
     }
