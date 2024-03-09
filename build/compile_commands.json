@@ -1,8 +1,0 @@
-[
-{
-  "directory": "E:/Project/vsCode/RayTracing/build",
-  "command": "E:\\ENV\\mingw64\\bin\\g++.exe  @CMakeFiles/InOneWeekend.dir/includes_CXX.rsp -g -o CMakeFiles\\InOneWeekend.dir\\src\\inoneweekend.cpp.obj -c E:\\Project\\vsCode\\RayTracing\\InOneWeekend\\src\\inoneweekend.cpp",
-  "file": "E:/Project/vsCode/RayTracing/InOneWeekend/src/inoneweekend.cpp",
-  "output": "CMakeFiles/InOneWeekend.dir/src/inoneweekend.cpp.obj"
-}
-]
