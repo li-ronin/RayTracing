@@ -42,7 +42,26 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "*.tcc": "cpp",
+        "memory_resource": "cpp",
+        "array": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "fstream": "cpp",
+        "numbers": "cpp",
+        "cstdarg": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Enabled"
+    "C_Cpp.errorSquiggles": "Enabled",
+    "cmake.sourceDirectory": "E:/Project/vsCode/RayTracing/InOneWeekend",
+    "terminal.integrated.shellArgs.windows": ["-NoLogo", "-ExecutionPolicy", "Bypass", "-Command", "$env:PYTHONIOENCODING='UTF-8'; $env:VSCODE_UNICODE_WINDOWS='1'; $env:LANG='en_US.UTF-8'; $env:LC_ALL='en_US.UTF-8'; $env:LANGUAGE='en_US.UTF-8'; powershell.exe"],
+    "terminal.integrated.fontFamily": "consolas",  // 可选：设置合适的字体
 }
