@@ -1,5 +1,16 @@
 # RayTracing
 
+效果例图：
+
+[![pAuILAx.png](https://s21.ax1x.com/2024/09/16/pAuILAx.png)](https://imgse.com/i/pAuILAx)
+[![pAuIbH1.png](https://s21.ax1x.com/2024/09/16/pAuIbH1.png)](https://imgse.com/i/pAuIbH1)
+[![pAuION6.png](https://s21.ax1x.com/2024/09/16/pAuION6.png)](https://imgse.com/i/pAuION6)
+[![pAuIX4K.png](https://s21.ax1x.com/2024/09/16/pAuIX4K.png)](https://imgse.com/i/pAuIX4K)
+
+
+
+
+
 ## 1、In One Weekend系列
 
 **类**：
@@ -51,4 +62,5 @@
 	+ 柏林噪声
 
   
+
 [![pFyifr4.md.png](https://s21.ax1x.com/2024/03/09/pFyifr4.md.png)](https://imgse.com/i/pFyifr4)

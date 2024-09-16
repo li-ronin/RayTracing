@@ -172,6 +172,7 @@ void cornell_box()
 
    camera.render(world);
 }
+
 void cornell_smoke()
 {
    hittable_list world;
@@ -214,6 +215,7 @@ void cornell_smoke()
 
    camera.render(world);
 }
+
 void test()
 {
    hittable_list world;
@@ -369,6 +371,7 @@ void BigScene2()
    camera.background = Color(0, 0, 0); // 0.70, 0.80, 1.00
    camera.render(world);
 }
+
 int main()
 {
    // World
